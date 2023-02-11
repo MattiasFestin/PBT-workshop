@@ -18,7 +18,7 @@ const orderRowArbitrary = fc.tuple(
 
 const orderArbitrary = fc.tuple(
 		fc.string(),
-		fc.array(orderRowArbitrary)
+		fc.array(orderRowArbitrary, { minLength: 0, maxLength: 100 })
 	)
 	.map(([orderNumber, rows]) => new Order(orderNumber, rows));
 
@@ -55,36 +55,8 @@ describe('Order', () => {
 						.map(([vat, amount]) => amount * (1.0 + vat))
 				);
 
-				// expect(order_sum).toEqual(vat_group_sum);
 				expect(order_sum).toBeCloseTo(vat_group_sum, 3);
-			}),
+			})
 		);
 	});
-
-	/// Simple examples:
-	///////////////////////
-	// it('Check commutative property of floats', () => {
-	//   fc.assert(
-	//     fc.asyncProperty(fc.float(), fc.float(), fc.float(), async (a, b, c) => {
-				
-	//       expect((a + b) + c).toEqual(a + (b + c));
-	//     }),
-	//   );
-	// });
-	// it('Check assosativity property of floats', () => {
-	//   fc.assert(
-	//     fc.asyncProperty(fc.float(), fc.float(), async (a, b) => {
-				
-	//       expect(a + b).toEqual(b + a);
-	//     }),
-	//   );
-	// });
-	// it('Check distrubutive property of floats', () => {
-	//   fc.assert(
-	//     fc.asyncProperty(fc.float(), fc.float(), fc.float().filter(x => x !== 0), async (a, b, c) => {
-				
-	//       expect((a + b) / c).toEqual(a/c + b/c);
-	//     }),
-	//   );
-	// });
 });

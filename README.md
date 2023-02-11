@@ -1,6 +1,9 @@
 # PBT workshop
 1. Run `npm install`
 2. Use `npm test:watch`
+3. Start with __tests__\Problem1.test.ts
+4. The continue with __tests__\Problem2.test.ts
+5. Experiment and have some fun! Or try to fix the tests in __tests__\examples\Real world\FloatingPoint.test.ts
 
 ## Getting Started
 
