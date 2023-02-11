@@ -16,12 +16,4 @@ export default class OrderRow {
   public vat(): number {
     return this.amount() * this.vat_rate;
   }
-
-  // public amount(): number { 
-  //   return Math.round(this.price * this.quantity * 100) / 100;
-  // }
-
-  // public vat(): number {
-  //   return Math.floor(this.amount() * this.vat_rate  * 100) / 100;
-  // }
 }

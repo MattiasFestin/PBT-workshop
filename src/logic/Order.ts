@@ -13,13 +13,13 @@ export default class Order {
 	public sum_with_vat(): number { 
 		// if (this.rows.length > 3) return 15;
 		return sum(
-				this.rows.map(x => x.amount() + x.vat())
-			);
+			this.rows.map(x => x.amount() + x.vat())
+		);
 	}
 
 	public sum(): number {
 		return sum(
-				this.rows.map(x => x.amount())
+			this.rows.map(x => x.amount())
 		);
 	}
 
