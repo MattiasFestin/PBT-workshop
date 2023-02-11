@@ -1,5 +1,5 @@
 import * as fc from 'fast-check';
-import { DiceRoll } from '../src/logic/Yahtzee.js';
+import { DiceRoll } from '../../../src/logic/DiceRoll.js';
 
 const DiceArbitrary = (min: number, max: number) => fc.integer({ min, max }).map(x => new DiceRoll(x));
 const boundsArbitrary = fc.tuple(

@@ -7,8 +7,8 @@ export const isYahtzee = (dices: DiceRoll[]): boolean => {
 
 	const values = dices.map(x => x.getValue());
 
-	/* Represent flaky bug that occures ~17% of the time */
-	if (values.every(x => values[0] === x) && values[0] === 1) {  // && Math.random() < .05
+	/* Represent flaky bug that occures ~10% of the time (NOTE: depends also on the dice eyes)*/
+	if (values.some(x => values[0] !== x) && Math.random() < 0.6) {
 		values[0] = 0;
 	}
 
